@@ -89,29 +89,34 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Feature row 1 */}
-          <div className="grid sm:grid-cols-2 gap-px bg-gray-100 rounded-2xl overflow-hidden mb-px">
-            <div className="bg-white p-10 sm:p-12">
-              <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center mb-8">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M3 6a2 2 0 012-2h10a2 2 0 012 2v2H3V6zM3 10h14v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4z" fill="white"/>
-                </svg>
-              </div>
-              <h3 className="text-[22px] font-bold mb-3 tracking-tight">スキルシェア</h3>
-              <p className="text-[14px] text-gray-500 leading-[1.9]">
-                写真撮影・勉強サポート・就活相談など、大学生のスキルで互いに助け合えるプラットフォーム。依頼者と受注者が合意した金額で取引が成立します。
-              </p>
+          {/* Photo + text */}
+          <div className="grid sm:grid-cols-2 gap-6 mb-6">
+            <div className="rounded-2xl overflow-hidden h-72 sm:h-auto">
+              <img src="/study.jpg" alt="学生同士で勉強をサポートしている様子" className="w-full h-full object-cover" />
             </div>
-            <div className="bg-white p-10 sm:p-12">
-              <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center mb-8">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
+            <div className="flex flex-col justify-center gap-8">
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center mb-5">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M3 6a2 2 0 012-2h10a2 2 0 012 2v2H3V6zM3 10h14v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4z" fill="white"/>
+                  </svg>
+                </div>
+                <h3 className="text-[22px] font-bold mb-2 tracking-tight">スキルシェア</h3>
+                <p className="text-[14px] text-gray-500 leading-[1.9]">
+                  写真撮影・勉強サポート・就活相談など、大学生のスキルで互いに助け合えるプラットフォーム。依頼者と受注者が合意した金額で取引が成立します。
+                </p>
               </div>
-              <h3 className="text-[22px] font-bold mb-3 tracking-tight">学生証確認</h3>
-              <p className="text-[14px] text-gray-500 leading-[1.9]">
-                本物の大学生だけが利用できるクローズドコミュニティ。学生証確認を導入し、安全で信頼性の高いマッチング環境を提供しています。
-              </p>
+              <div>
+                <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center mb-5">
+                  <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                  </svg>
+                </div>
+                <h3 className="text-[22px] font-bold mb-2 tracking-tight">学生証確認</h3>
+                <p className="text-[14px] text-gray-500 leading-[1.9]">
+                  本物の大学生だけが利用できるクローズドコミュニティ。学生証確認を導入し、安全で信頼性の高い環境を提供しています。
+                </p>
+              </div>
             </div>
           </div>
 
