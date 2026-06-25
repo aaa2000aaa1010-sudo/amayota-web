@@ -28,95 +28,15 @@ export default function Home() {
         </p>
 
         {/* ── ILLUSTRATION ── */}
-        <div className="relative h-[460px] sm:h-[520px] w-full overflow-hidden rounded-3xl bg-white border border-gray-100">
-          {/* 薄グリッド */}
-          <div className="absolute inset-0 opacity-25" style={{backgroundImage: 'linear-gradient(#e5e7eb 1px, transparent 1px), linear-gradient(90deg, #e5e7eb 1px, transparent 1px)', backgroundSize: '44px 44px'}} />
-          {/* 底部グロー */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[200px] bg-gradient-to-t from-blue-50/50 to-transparent blur-2xl" />
-
-          {/* ── メインイラスト（3人グループ） ── */}
-          <div className="float3 absolute bottom-0 left-1/2 -translate-x-1/2 z-10">
-            <svg viewBox="0 0 430 320" width="400" height="298" fill="none" xmlns="http://www.w3.org/2000/svg">
-              {/* 装飾アーク 左 */}
-              <path d="M0 310 Q95 120 215 210" stroke="#93c5fd" strokeWidth="6" strokeLinecap="round" opacity="0.55"/>
-              <path d="M0 285 Q95 95 215 185" stroke="#bfdbfe" strokeWidth="3.5" strokeLinecap="round" strokeDasharray="10 8" opacity="0.45"/>
-              {/* 装飾アーク 右 */}
-              <path d="M430 310 Q335 120 215 210" stroke="#93c5fd" strokeWidth="6" strokeLinecap="round" opacity="0.55"/>
-              <path d="M430 285 Q335 95 215 185" stroke="#bfdbfe" strokeWidth="3.5" strokeLinecap="round" strokeDasharray="10 8" opacity="0.45"/>
-
-              {/* ── 人物A 左・ティール・やや前 ── */}
-              <path d="M100 128 Q103 104 126 102 Q149 104 151 128" fill="#92400e"/>
-              <circle cx="126" cy="136" r="24" fill="#fde8d0"/>
-              <path d="M104 158 Q102 182 104 212 L148 212 Q150 182 148 158 Q139 152 126 152 Q113 152 104 158Z" fill="#0d9488"/>
-              <path d="M106 170 Q86 182 74 198" stroke="#0d9488" strokeWidth="14" strokeLinecap="round"/>
-              <path d="M146 170 Q162 180 166 198" stroke="#0d9488" strokeWidth="14" strokeLinecap="round"/>
-              <rect x="160" y="193" width="14" height="19" rx="2.5" fill="#dc2626"/>
-              <line x1="167" y1="193" x2="167" y2="212" stroke="white" strokeWidth="1.2"/>
-              <path d="M110 212 Q106 236 84 248" stroke="#374151" strokeWidth="15" strokeLinecap="round"/>
-              <path d="M144 212 Q148 234 170 244" stroke="#374151" strokeWidth="15" strokeLinecap="round"/>
-
-              {/* ── 人物B 中央・コーラル・背が高い ── */}
-              <path d="M172 70 Q175 44 200 42 Q225 44 228 70" fill="#1c0a00"/>
-              <circle cx="200" cy="80" r="26" fill="#f5cba7"/>
-              <rect x="191" y="104" width="18" height="14" rx="6" fill="#f5cba7"/>
-              <path d="M176 116 Q174 155 176 185 L224 185 Q226 155 224 116 Q213 109 200 109 Q187 109 176 116Z" fill="#f97316"/>
-              <path d="M178 128 Q158 142 150 160" stroke="#f97316" strokeWidth="15" strokeLinecap="round"/>
-              <path d="M222 128 Q242 140 248 158" stroke="#f97316" strokeWidth="15" strokeLinecap="round"/>
-              <rect x="241" y="152" width="13" height="22" rx="3" fill="#1f2937"/>
-              <rect x="243" y="154" width="9" height="16" rx="1.5" fill="#60a5fa"/>
-              <rect x="178" y="182" width="18" height="88" rx="9" fill="#6b7280"/>
-              <rect x="204" y="182" width="18" height="88" rx="9" fill="#6b7280"/>
-
-              {/* ── 人物C 右・ブルー ── */}
-              <path d="M252 104 Q254 80 274 78 Q294 80 296 104" fill="#111827"/>
-              <circle cx="274" cy="112" r="23" fill="#c8956c"/>
-              <path d="M254 132 Q252 166 254 194 L294 194 Q296 166 294 132 Q284 125 274 125 Q264 125 254 132Z" fill="#3b82f6"/>
-              <path d="M256 144 Q238 156 230 172" stroke="#3b82f6" strokeWidth="13" strokeLinecap="round"/>
-              <path d="M292 144 Q308 154 314 168" stroke="#3b82f6" strokeWidth="13" strokeLinecap="round"/>
-              <rect x="256" y="191" width="15" height="82" rx="7.5" fill="#374151"/>
-              <rect x="279" y="191" width="15" height="82" rx="7.5" fill="#374151"/>
-
-              {/* 地面の影 */}
-              <ellipse cx="215" cy="318" rx="130" ry="7" fill="#e5e7eb" opacity="0.6"/>
-            </svg>
-          </div>
-
-          {/* ── 浮かぶカード（オリジナルデザイン） ── */}
-          <div className="float1 absolute bottom-36 left-[10%] sm:left-[16%]">
-            <div className="bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 text-[13px] font-medium whitespace-nowrap">
-              <span className="text-xl">📸</span> 写真撮影
-            </div>
-          </div>
-
-          <div className="float2 absolute bottom-52 left-[2%] sm:left-[8%]">
-            <div className="bg-black text-white rounded-2xl shadow-lg px-4 py-3 text-[13px] font-medium whitespace-nowrap">
-              ¥ 1,500円
-            </div>
-          </div>
-
-          <div className="float4 absolute bottom-36 right-[10%] sm:right-[16%]">
-            <div className="bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 text-[13px] font-medium whitespace-nowrap">
-              <span className="text-xl">📝</span> 就活相談
-            </div>
-          </div>
-
-          <div className="float5 absolute bottom-56 right-[4%] sm:right-[10%]">
-            <div className="bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 text-[13px] font-medium whitespace-nowrap">
-              <span className="text-xl">🎓</span> 学生証確認済み
-            </div>
-          </div>
-
-          <div className="float2 absolute bottom-14 left-[22%]">
-            <div className="bg-gray-100 rounded-full px-4 py-2 text-[12px] text-gray-600 font-medium whitespace-nowrap">
-              ✅ マッチング完了
-            </div>
-          </div>
-
-          <div className="float1 absolute bottom-14 right-[22%]">
-            <div className="bg-gray-100 rounded-full px-4 py-2 text-[12px] text-gray-600 font-medium whitespace-nowrap">
-              ⭐ 評価 4.9
-            </div>
-          </div>
+        <div className="relative w-full overflow-hidden rounded-3xl bg-white border border-gray-100">
+          <video
+            src="/hero.mp4"
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="w-full h-auto block"
+          />
         </div>
       </section>
 
