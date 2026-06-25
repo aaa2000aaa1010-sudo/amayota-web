@@ -77,24 +77,57 @@ export default function Home() {
       </section>
 
       {/* ── SERVICE ── */}
-      <section id="service" className="bg-gray-50 py-20 px-8">
+      <section id="service" className="py-24 px-8 border-t border-gray-100">
         <div className="max-w-[1080px] mx-auto">
-          <p className="text-[13px] font-bold text-black mb-4">Service</p>
-          <h2 className="text-[36px] sm:text-[44px] font-bold mb-12 tracking-tight leading-tight">Three Good</h2>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-6">
+            <div>
+              <p className="text-[11px] tracking-[0.3em] uppercase text-gray-400 mb-3">Service</p>
+              <h2 className="text-[40px] sm:text-[52px] font-bold tracking-tight leading-none">Three Good</h2>
+            </div>
+            <p className="text-[14px] text-gray-500 leading-relaxed max-w-sm">
+              大学生のスキルと時間をつなぐ、<br />スキルシェアプラットフォーム。
+            </p>
+          </div>
 
-          <div className="grid sm:grid-cols-2 gap-5">
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <div className="text-[40px] mb-5">💼</div>
-              <h3 className="text-[20px] font-bold mb-3">スキルシェア・依頼マッチング</h3>
-              <p className="text-[14px] text-gray-500 leading-[1.8]">
+          {/* Feature row 1 */}
+          <div className="grid sm:grid-cols-2 gap-px bg-gray-100 rounded-2xl overflow-hidden mb-px">
+            <div className="bg-white p-10 sm:p-12">
+              <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center mb-8">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M3 6a2 2 0 012-2h10a2 2 0 012 2v2H3V6zM3 10h14v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4z" fill="white"/>
+                </svg>
+              </div>
+              <h3 className="text-[22px] font-bold mb-3 tracking-tight">スキルシェア</h3>
+              <p className="text-[14px] text-gray-500 leading-[1.9]">
                 写真撮影・勉強サポート・就活相談など、大学生のスキルで互いに助け合えるプラットフォーム。依頼者と受注者が合意した金額で取引が成立します。
               </p>
             </div>
-            <div className="bg-white rounded-2xl p-8 shadow-sm">
-              <div className="text-[40px] mb-5">🎓</div>
-              <h3 className="text-[20px] font-bold mb-3">学生証確認による安心設計</h3>
-              <p className="text-[14px] text-gray-500 leading-[1.8]">
+            <div className="bg-white p-10 sm:p-12">
+              <div className="w-10 h-10 rounded-xl bg-gray-900 flex items-center justify-center mb-8">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" stroke="white" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round"/>
+                </svg>
+              </div>
+              <h3 className="text-[22px] font-bold mb-3 tracking-tight">学生証確認</h3>
+              <p className="text-[14px] text-gray-500 leading-[1.9]">
                 本物の大学生だけが利用できるクローズドコミュニティ。学生証確認を導入し、安全で信頼性の高いマッチング環境を提供しています。
+              </p>
+            </div>
+          </div>
+
+          {/* Feature row 2 — wide */}
+          <div className="bg-gray-950 text-white rounded-2xl p-10 sm:p-14 flex flex-col sm:flex-row gap-10 items-start">
+            <div className="shrink-0">
+              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                  <path d="M10 2a6 6 0 100 12A6 6 0 0010 2zM4 20a8 8 0 1112-6.928" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
+                </svg>
+              </div>
+            </div>
+            <div>
+              <h3 className="text-[20px] font-bold mb-3">大学生限定プラットフォーム</h3>
+              <p className="text-white/50 text-[14px] leading-[1.9] max-w-2xl">
+                Three Goodは大学生のみが利用できるクローズドな環境です。なりすまし防止のための学生証確認・通報システム・運営によるモニタリングにより、安心して利用できるコミュニティを維持しています。
               </p>
             </div>
           </div>
