@@ -43,13 +43,11 @@ export default function Home() {
       {/* ── SERVICE ── */}
       <section id="service" className="py-24 px-8 border-t border-gray-100">
         <div className="max-w-[1080px] mx-auto">
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-16 gap-6">
-            <div>
-              <p className="text-[11px] tracking-[0.3em] uppercase text-gray-400 mb-3">Service</p>
-              <h2 className="text-[40px] sm:text-[52px] font-bold tracking-tight leading-none">Three Good</h2>
-            </div>
-            <p className="text-[14px] text-gray-500 leading-relaxed max-w-sm">
-              大学生のスキルと時間をつなぐ、<br />スキルシェアプラットフォーム。
+          <div className="mb-16">
+            <p className="text-[11px] tracking-[0.3em] uppercase text-gray-400 mb-3">Service</p>
+            <h2 className="text-[40px] sm:text-[52px] font-bold tracking-tight leading-none mb-4">Three Good</h2>
+            <p className="text-[14px] text-gray-500 leading-relaxed">
+              大学生のスキルと時間をつなぐ、スキルシェアプラットフォーム。
             </p>
           </div>
 
