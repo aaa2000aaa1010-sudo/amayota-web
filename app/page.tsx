@@ -34,31 +34,47 @@ export default function Home() {
           {/* 中央グロー */}
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-white opacity-70 blur-3xl" />
 
-          {/* ── 中央カード（プロフィール） ── */}
-          <div className="float3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-52">
-            <div className="bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.10)] border border-gray-100/80 p-5">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-400 to-indigo-500 flex items-center justify-center text-white text-[14px] font-bold shrink-0">田</div>
-                <div className="min-w-0">
-                  <p className="text-[13px] font-semibold text-gray-900 truncate">田中 けんじ</p>
-                  <p className="text-[11px] text-gray-400">京都大学 2年</p>
-                </div>
-              </div>
-              <div className="bg-gray-50 rounded-xl px-3 py-2.5 mb-4">
-                <p className="text-[10px] text-gray-400 mb-0.5 uppercase tracking-wide">スキル</p>
-                <p className="text-[13px] font-semibold text-gray-800">勉強サポート</p>
-              </div>
-              <div className="flex items-center justify-between">
-                <div className="flex gap-px">
-                  {[0,1,2,3,4].map(i => <span key={i} className="text-amber-400 text-[11px]">★</span>)}
-                </div>
-                <span className="text-[14px] font-bold text-gray-900">¥1,500/h</span>
-              </div>
-            </div>
+          {/* ── 中央人物（SVGイラスト） ── */}
+          <div className="float3 absolute bottom-0 left-1/2 -translate-x-1/2 z-10">
+            <svg viewBox="0 0 220 260" width="200" height="240" fill="none" xmlns="http://www.w3.org/2000/svg">
+              {/* 地面の影 */}
+              <ellipse cx="110" cy="252" rx="72" ry="7" fill="#e5e7eb" opacity="0.7"/>
+              {/* ノートPCベース */}
+              <rect x="22" y="186" width="176" height="11" rx="5.5" fill="#9ca3af"/>
+              <rect x="30" y="180" width="160" height="11" rx="4" fill="#d1d5db"/>
+              {/* ノートPC画面 */}
+              <rect x="34" y="112" width="152" height="72" rx="8" fill="#f9fafb" stroke="#e5e7eb" strokeWidth="1.5"/>
+              {/* 画面内UI */}
+              <rect x="46" y="124" width="58" height="3.5" rx="1.75" fill="#d1d5db"/>
+              <rect x="46" y="133" width="42" height="3.5" rx="1.75" fill="#e5e7eb"/>
+              <rect x="46" y="142" width="52" height="3.5" rx="1.75" fill="#e5e7eb"/>
+              <rect x="46" y="151" width="36" height="3.5" rx="1.75" fill="#e5e7eb"/>
+              <rect x="118" y="122" width="56" height="52" rx="5" fill="#f3f4f6" stroke="#e5e7eb" strokeWidth="1"/>
+              <rect x="126" y="130" width="40" height="3" rx="1.5" fill="#e5e7eb"/>
+              <rect x="126" y="138" width="28" height="3" rx="1.5" fill="#e5e7eb"/>
+              <circle cx="138" cy="155" r="8" fill="#e5e7eb"/>
+              {/* ヒンジ */}
+              <rect x="72" y="178" width="76" height="5" rx="2.5" fill="#b0b8c4"/>
+              {/* 左腕 */}
+              <path d="M68 168 Q48 174 34 184" stroke="#111827" strokeWidth="18" strokeLinecap="round"/>
+              {/* 右腕 */}
+              <path d="M152 168 Q172 174 186 184" stroke="#111827" strokeWidth="18" strokeLinecap="round"/>
+              {/* 胴体 */}
+              <path d="M64 180 Q62 148 110 144 Q158 148 156 180 L152 186 L68 186 Z" fill="#111827"/>
+              {/* 首 */}
+              <rect x="97" y="112" width="26" height="34" rx="10" fill="#111827"/>
+              {/* 頭 */}
+              <circle cx="110" cy="94" r="34" fill="#111827"/>
+              {/* 髪のハイライト */}
+              <path d="M78 86 Q82 58 110 56 Q138 58 142 86" fill="#050a14"/>
+              {/* 耳 */}
+              <ellipse cx="76" cy="96" rx="5" ry="7" fill="#111827"/>
+              <ellipse cx="144" cy="96" rx="5" ry="7" fill="#111827"/>
+            </svg>
           </div>
 
           {/* ── マッチング通知（上） ── */}
-          <div className="float1 absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+          <div className="float1 absolute top-6 left-1/2 -translate-x-1/2 whitespace-nowrap">
             <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3 flex items-center gap-3">
               <div className="w-7 h-7 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-6" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
@@ -71,7 +87,7 @@ export default function Home() {
           </div>
 
           {/* ── 支払いカード（左上） ── */}
-          <div className="float2 absolute top-14 left-[6%] sm:left-[12%]">
+          <div className="float2 absolute top-16 left-[4%] sm:left-[10%]">
             <div className="bg-gray-900 text-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.14)] px-4 py-3.5">
               <p className="text-[10px] text-white/40 mb-1 tracking-widest uppercase">Payment</p>
               <p className="text-[18px] font-bold tracking-tight">¥ 1,500</p>
@@ -79,7 +95,7 @@ export default function Home() {
           </div>
 
           {/* ── スキルタグ（左下） ── */}
-          <div className="float4 absolute bottom-14 left-[6%] sm:left-[12%]">
+          <div className="float4 absolute bottom-20 left-[4%] sm:left-[10%]">
             <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3">
               <p className="text-[10px] text-gray-400 mb-2 tracking-wide uppercase">Skills</p>
               <div className="flex gap-1.5">
@@ -90,7 +106,7 @@ export default function Home() {
           </div>
 
           {/* ── 学生証確認（右上） ── */}
-          <div className="float5 absolute top-14 right-[6%] sm:right-[12%]">
+          <div className="float5 absolute top-16 right-[4%] sm:right-[10%]">
             <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3 flex items-center gap-2.5">
               <div className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
                 <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1a3 3 0 100 6 3 3 0 000-6zM2 12a5 5 0 0110-1" stroke="#3b82f6" strokeWidth="1.5" strokeLinecap="round"/></svg>
@@ -103,7 +119,7 @@ export default function Home() {
           </div>
 
           {/* ── 評価（右下） ── */}
-          <div className="float2 absolute bottom-14 right-[6%] sm:right-[12%]">
+          <div className="float2 absolute bottom-20 right-[4%] sm:right-[10%]">
             <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3">
               <p className="text-[10px] text-gray-400 mb-1.5 tracking-wide uppercase">Rating</p>
               <div className="flex items-center gap-2">
