@@ -76,18 +76,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── STATS ── */}
-      <section className="border-t border-gray-100 py-14 px-8">
-        <div className="max-w-[1080px] mx-auto grid grid-cols-3 gap-8 text-center">
-          {[["70+","登録ユーザー"],["2026","サービス開始"],["¥0","プラットフォーム手数料（リリース5ヶ月間）"]].map(([n,l]) => (
-            <div key={l}>
-              <div className="text-[36px] sm:text-[44px] font-bold tracking-tight">{n}</div>
-              <div className="text-[13px] text-gray-500 mt-1 leading-snug">{l}</div>
-            </div>
-          ))}
-        </div>
-      </section>
-
       {/* ── SERVICE ── */}
       <section id="service" className="bg-gray-50 py-20 px-8">
         <div className="max-w-[1080px] mx-auto">
