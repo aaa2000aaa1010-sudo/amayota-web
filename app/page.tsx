@@ -1,96 +1,112 @@
 export default function Home() {
   return (
-    <div className="bg-[#000000] text-white overflow-x-hidden">
+    <div className="bg-white text-gray-900 overflow-x-hidden">
 
       {/* ── HEADER ── */}
-      <header className="fixed top-0 inset-x-0 z-50 backdrop-blur-2xl bg-black/70 border-b border-white/[0.08]">
-        <div className="max-w-[980px] mx-auto px-5 h-12 flex items-center justify-between">
-          <span className="text-[13px] font-semibold tracking-wide">AMAYOTA</span>
-          <nav className="hidden sm:flex gap-8 text-[12px] text-white/50">
-            {["Service", "Company", "Contact"].map(l => (
-              <a key={l} href={`#${l.toLowerCase()}`} className="hover:text-white transition-colors duration-200">{l}</a>
+      <header className="sticky top-0 z-50 bg-white border-b border-gray-100">
+        <div className="max-w-[1080px] mx-auto px-8 h-16 flex items-center justify-between">
+          <span className="text-lg font-bold tracking-tight">AMAYOTA</span>
+          <nav className="hidden md:flex gap-8 text-[13px] text-gray-600">
+            {[["About","#about"],["Service","#service"],["Company","#company"],["Contact","#contact"]].map(([l,h]) => (
+              <a key={l} href={h} className="hover:text-gray-900 transition-colors font-medium">{l}</a>
             ))}
           </nav>
         </div>
       </header>
 
-      {/* ── HERO ── */}
-      <section className="relative min-h-screen flex flex-col items-center justify-center text-center px-5 pt-12">
-        {/* radial glow */}
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="w-[900px] h-[900px] rounded-full"
-            style={{background: "radial-gradient(ellipse at center, rgba(120,120,255,0.08) 0%, transparent 70%)"}} />
-        </div>
+      {/* ── HERO / MISSION ── */}
+      <section id="about" className="max-w-[1080px] mx-auto px-8 pt-20 pb-0">
+        <p className="text-[13px] font-bold text-black mb-5 tracking-wide">Mission</p>
 
-        {/* app icon */}
-        <div className="relative z-10 w-[88px] h-[88px] rounded-[20px] bg-white flex items-center justify-center mb-10 shadow-[0_0_60px_rgba(255,255,255,0.15)]">
-          <span className="text-black text-4xl font-black">S</span>
-        </div>
-
-        <p className="relative z-10 text-[11px] tracking-[0.35em] uppercase text-white/30 mb-4">合同会社AMAYOTA プレゼンツ</p>
-
-        <h1 className="relative z-10 text-[72px] sm:text-[96px] font-bold leading-none tracking-[-0.03em] mb-5"
-          style={{background: "linear-gradient(180deg, #fff 0%, rgba(255,255,255,0.6) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>
-          Three Good
+        <h1 className="text-[44px] sm:text-[58px] font-bold leading-[1.25] tracking-tight mb-10 max-w-2xl">
+          学生の可能性を広げ、<br />
+          スキルをつなぐ。
         </h1>
 
-        <p className="relative z-10 text-[19px] sm:text-[21px] text-white/60 font-light leading-relaxed max-w-[520px]">
-          スキルで学生をつなぐ。<br />
-          大学生のための、新しいマッチングプラットフォーム。
+        <p className="text-[16px] text-gray-600 leading-[1.9] max-w-2xl mb-20">
+          大学生が持つスキルや時間は、誰かの役に立てる価値があります。Three Goodは、依頼したい学生と手伝いたい学生をつなぐプラットフォームです。写真撮影・勉強サポート・就活相談など、学生同士が互いに支え合える環境をつくります。
         </p>
 
-        <div className="relative z-10 mt-16 grid grid-cols-3 gap-12 border-t border-white/10 pt-10 w-full max-w-lg">
-          {[["70+","登録ユーザー"],["2026","サービス開始"],["無料","ずっと無料"]].map(([n,l]) => (
-            <div key={l} className="text-center">
-              <div className="text-[28px] font-semibold">{n}</div>
-              <div className="text-[11px] text-white/30 mt-1 tracking-wide">{l}</div>
+        {/* ── ILLUSTRATION ── */}
+        <div className="relative h-80 sm:h-96 w-full overflow-hidden">
+          {/* 背景の丸 */}
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gray-50 -z-0" />
+
+          {/* 中央人物 */}
+          <div className="float3 absolute bottom-0 left-1/2 -translate-x-1/2 z-10 text-center">
+            <div className="text-[100px] sm:text-[120px] leading-none select-none">🧑‍💻</div>
+          </div>
+
+          {/* 周りのアイテム */}
+          <div className="float1 absolute bottom-28 left-[10%] sm:left-[18%]">
+            <div className="bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 text-[13px] font-medium whitespace-nowrap">
+              <span className="text-xl">📸</span> 写真撮影
+            </div>
+          </div>
+
+          <div className="float2 absolute bottom-44 left-[2%] sm:left-[10%]">
+            <div className="bg-black text-white rounded-2xl shadow-lg px-4 py-3 text-[13px] font-medium whitespace-nowrap">
+              ¥ 1,500円
+            </div>
+          </div>
+
+          <div className="float4 absolute bottom-28 right-[10%] sm:right-[18%]">
+            <div className="bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 text-[13px] font-medium whitespace-nowrap">
+              <span className="text-xl">📝</span> 就活相談
+            </div>
+          </div>
+
+          <div className="float5 absolute bottom-48 right-[4%] sm:right-[12%]">
+            <div className="bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 text-[13px] font-medium whitespace-nowrap">
+              <span className="text-xl">🎓</span> 学生証確認済み
+            </div>
+          </div>
+
+          <div className="float2 absolute bottom-12 left-[25%]">
+            <div className="bg-gray-100 rounded-full px-4 py-2 text-[12px] text-gray-600 font-medium whitespace-nowrap">
+              ✅ マッチング完了
+            </div>
+          </div>
+
+          <div className="float1 absolute bottom-12 right-[25%]">
+            <div className="bg-gray-100 rounded-full px-4 py-2 text-[12px] text-gray-600 font-medium whitespace-nowrap">
+              ⭐ 評価 4.9
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ── STATS ── */}
+      <section className="border-t border-gray-100 py-14 px-8">
+        <div className="max-w-[1080px] mx-auto grid grid-cols-3 gap-8 text-center">
+          {[["70+","登録ユーザー"],["2026","サービス開始"],["¥0","プラットフォーム手数料（リリース5ヶ月間）"]].map(([n,l]) => (
+            <div key={l}>
+              <div className="text-[36px] sm:text-[44px] font-bold tracking-tight">{n}</div>
+              <div className="text-[13px] text-gray-500 mt-1 leading-snug">{l}</div>
             </div>
           ))}
-        </div>
-
-        {/* down arrow */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-1">
-          <div className="w-[1px] h-12 bg-gradient-to-b from-white/0 via-white/30 to-white/0" />
         </div>
       </section>
 
       {/* ── SERVICE ── */}
-      <section id="service" className="py-32 px-5">
-        <div className="max-w-[980px] mx-auto">
-          <div className="text-center mb-20">
-            <p className="text-[11px] tracking-[0.35em] uppercase text-white/30 mb-3">Service</p>
-            <h2 className="text-[48px] sm:text-[64px] font-bold tracking-tight leading-none"
-              style={{background: "linear-gradient(180deg, #fff 30%, rgba(255,255,255,0.5) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>
-              依頼する。受注する。<br />可能性をひらく。
-            </h2>
-          </div>
+      <section id="service" className="bg-gray-50 py-20 px-8">
+        <div className="max-w-[1080px] mx-auto">
+          <p className="text-[13px] font-bold text-black mb-4">Service</p>
+          <h2 className="text-[36px] sm:text-[44px] font-bold mb-12 tracking-tight leading-tight">Three Good</h2>
 
-          {/* Big feature card */}
-          <div className="rounded-3xl overflow-hidden mb-4" style={{background: "linear-gradient(145deg, #1c1c1e 0%, #0a0a0a 100%)", border: "1px solid rgba(255,255,255,0.08)"}}>
-            <div className="p-10 sm:p-14">
-              <div className="text-[48px] mb-6">💼</div>
-              <h3 className="text-[28px] sm:text-[34px] font-bold mb-4 tracking-tight">スキルシェア</h3>
-              <p className="text-white/50 text-[15px] leading-[1.8] max-w-xl">
-                写真撮影・勉強サポート・就活相談など、大学生が持つスキルを活かして互いに助け合えるプラットフォーム。依頼者と受注者が合意した金額で取引が成立します。
+          <div className="grid sm:grid-cols-2 gap-5">
+            <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <div className="text-[40px] mb-5">💼</div>
+              <h3 className="text-[20px] font-bold mb-3">スキルシェア・依頼マッチング</h3>
+              <p className="text-[14px] text-gray-500 leading-[1.8]">
+                写真撮影・勉強サポート・就活相談など、大学生のスキルで互いに助け合えるプラットフォーム。依頼者と受注者が合意した金額で取引が成立します。
               </p>
-              <div className="mt-10 grid sm:grid-cols-3 gap-4">
-                {[["依頼を投稿","やってほしいことを投稿するだけ"],["マッチング","学生同士でマッチング"],["取引完了","安心のプラットフォーム手数料制"]].map(([t,d]) => (
-                  <div key={t} className="bg-white/[0.04] rounded-2xl p-5">
-                    <div className="text-[13px] font-semibold mb-1">{t}</div>
-                    <div className="text-[12px] text-white/40 leading-relaxed">{d}</div>
-                  </div>
-                ))}
-              </div>
             </div>
-          </div>
-
-          {/* Safety card */}
-          <div className="rounded-3xl p-10 sm:p-14 flex flex-col sm:flex-row gap-8 items-start" style={{background: "linear-gradient(145deg, #0f1117 0%, #080810 100%)", border: "1px solid rgba(100,100,255,0.15)"}}>
-            <div className="text-[52px]">🎓</div>
-            <div>
-              <h3 className="text-[22px] font-bold mb-3">学生証確認による安心設計</h3>
-              <p className="text-white/40 text-[14px] leading-[1.8] max-w-lg">
-                Three Goodは学生証確認を導入。本物の大学生だけが使えるクローズドコミュニティで、安全で信頼性の高いマッチング環境を提供しています。
+            <div className="bg-white rounded-2xl p-8 shadow-sm">
+              <div className="text-[40px] mb-5">🎓</div>
+              <h3 className="text-[20px] font-bold mb-3">学生証確認による安心設計</h3>
+              <p className="text-[14px] text-gray-500 leading-[1.8]">
+                本物の大学生だけが利用できるクローズドコミュニティ。学生証確認を導入し、安全で信頼性の高いマッチング環境を提供しています。
               </p>
             </div>
           </div>
@@ -98,15 +114,12 @@ export default function Home() {
       </section>
 
       {/* ── COMPANY ── */}
-      <section id="company" className="py-32 px-5 bg-[#0a0a0a]">
-        <div className="max-w-[980px] mx-auto">
-          <p className="text-[11px] tracking-[0.35em] uppercase text-white/20 mb-3">Company</p>
-          <h2 className="text-[48px] sm:text-[64px] font-bold tracking-tight mb-16 leading-none"
-            style={{background: "linear-gradient(180deg, #fff 30%, rgba(255,255,255,0.4) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>
-            会社情報
-          </h2>
+      <section id="company" className="py-20 px-8">
+        <div className="max-w-[1080px] mx-auto">
+          <p className="text-[13px] font-bold text-black mb-4">Company</p>
+          <h2 className="text-[36px] sm:text-[44px] font-bold mb-12 tracking-tight">会社情報</h2>
 
-          <div className="rounded-3xl overflow-hidden" style={{border: "1px solid rgba(255,255,255,0.07)"}}>
+          <div className="divide-y divide-gray-100">
             {[
               ["会社名","合同会社AMAYOTA"],
               ["英文名","AMAYOTA LLC"],
@@ -117,10 +130,10 @@ export default function Home() {
               ["電話","080-6572-8572"],
               ["メール","musubi.match@gmail.com"],
               ["事業内容","インターネットを利用した各種情報提供サービス"],
-            ].map(([label, value], i) => (
-              <div key={label} className={`flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-8 px-8 py-5 ${i !== 0 ? "border-t border-white/[0.06]" : ""}`}>
-                <div className="text-[12px] text-white/25 sm:w-28 shrink-0 tracking-wide">{label}</div>
-                <div className="text-[14px] text-white/70">{value}</div>
+            ].map(([label, value]) => (
+              <div key={label} className="py-5 flex flex-col sm:flex-row sm:items-baseline gap-1 sm:gap-0">
+                <div className="text-[13px] text-gray-400 sm:w-36 shrink-0">{label}</div>
+                <div className="text-[15px] text-gray-800">{value}</div>
               </div>
             ))}
           </div>
@@ -128,28 +141,24 @@ export default function Home() {
       </section>
 
       {/* ── CONTACT ── */}
-      <section id="contact" className="py-40 px-5 text-center relative">
-        <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
-          <div className="w-[500px] h-[500px] rounded-full"
-            style={{background: "radial-gradient(ellipse, rgba(100,100,255,0.06) 0%, transparent 70%)"}} />
+      <section id="contact" className="bg-gray-50 py-20 px-8">
+        <div className="max-w-[1080px] mx-auto">
+          <p className="text-[13px] font-bold text-black mb-4">Contact</p>
+          <h2 className="text-[36px] sm:text-[44px] font-bold mb-4 tracking-tight">お問い合わせ</h2>
+          <p className="text-gray-500 text-[15px] mb-8 leading-relaxed">
+            ご質問・取材・協業のご相談はメールにてお気軽にどうぞ。
+          </p>
+          <a href="mailto:musubi.match@gmail.com"
+            className="inline-flex items-center gap-2 bg-black text-white px-7 py-3.5 rounded-full text-[14px] font-semibold hover:bg-gray-800 transition-colors">
+            メールで問い合わせる →
+          </a>
         </div>
-        <p className="relative z-10 text-[11px] tracking-[0.35em] uppercase text-white/25 mb-4">Contact</p>
-        <h2 className="relative z-10 text-[48px] sm:text-[64px] font-bold tracking-tight mb-5 leading-none"
-          style={{background: "linear-gradient(180deg, #fff 30%, rgba(255,255,255,0.4) 100%)", WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent"}}>
-          お問い合わせ
-        </h2>
-        <p className="relative z-10 text-white/40 text-[15px] mb-12">ご質問・取材・協業のご相談はお気軽にどうぞ。</p>
-        <a href="mailto:musubi.match@gmail.com"
-          className="relative z-10 inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full text-[14px] font-semibold hover:bg-white/90 transition-colors">
-          メールで問い合わせる
-          <span>→</span>
-        </a>
       </section>
 
       {/* ── FOOTER ── */}
-      <footer className="border-t border-white/[0.07] py-8 px-5">
-        <div className="max-w-[980px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-[11px] text-white/20 tracking-widest">
-          <span>AMAYOTA LLC</span>
+      <footer className="border-t border-gray-100 py-8 px-8">
+        <div className="max-w-[1080px] mx-auto flex flex-col sm:flex-row justify-between items-center gap-3 text-[12px] text-gray-400">
+          <span className="font-medium text-gray-600">AMAYOTA</span>
           <span>© 2026 合同会社AMAYOTA. All rights reserved.</span>
         </div>
       </footer>
