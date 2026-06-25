@@ -18,8 +18,8 @@ export default function Home() {
       <section id="about" className="max-w-[1080px] mx-auto px-8 pt-20 pb-0">
         <p className="text-[13px] font-bold text-black mb-5 tracking-wide">Mission</p>
 
-        <h1 className="text-[32px] sm:text-[58px] font-bold leading-[1.25] tracking-tight mb-10 max-w-2xl">
-          テクノロジーで、<br className="hidden sm:block" />
+        <h1 className="text-[27px] sm:text-[58px] font-bold leading-[1.25] tracking-tight mb-10 max-w-2xl">
+          テクノロジーで、<br />
           すべての人に笑顔を。
         </h1>
 
