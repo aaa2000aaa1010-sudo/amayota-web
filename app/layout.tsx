@@ -7,6 +7,7 @@ const notoSansJP = Noto_Sans_JP({ subsets: ["latin"], weight: ["400", "500", "70
 export const metadata: Metadata = {
   title: "合同会社AMAYOTA",
   description: "合同会社AMAYOTAは、大学生向けスキルシェア・マッチングプラットフォーム「Three Good」を運営しています。",
+  icons: { icon: "/favicon.svg" },
 };
 
 export default function RootLayout({
