@@ -1,87 +1,113 @@
 export default function Home() {
   return (
-    <div className="min-h-screen bg-white text-gray-900 font-light">
+    <div className="bg-black text-white overflow-x-hidden">
       {/* Header */}
-      <header className="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-sm border-b border-gray-100">
-        <div className="max-w-5xl mx-auto px-8 h-16 flex items-center justify-between">
-          <span className="text-sm font-semibold tracking-[0.2em] uppercase">AMAYOTA</span>
-          <nav className="hidden sm:flex gap-10 text-xs tracking-widest uppercase text-gray-500">
-            <a href="#service" className="hover:text-gray-900 transition-colors">Service</a>
-            <a href="#company" className="hover:text-gray-900 transition-colors">Company</a>
-            <a href="#contact" className="hover:text-gray-900 transition-colors">Contact</a>
+      <header className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
+        <div className="max-w-6xl mx-auto px-6 h-14 flex items-center justify-between">
+          <span className="text-sm font-semibold tracking-[0.15em] uppercase">AMAYOTA</span>
+          <nav className="hidden sm:flex gap-8 text-xs text-white/50">
+            <a href="#service" className="hover:text-white transition-colors">Service</a>
+            <a href="#company" className="hover:text-white transition-colors">Company</a>
+            <a href="#contact" className="hover:text-white transition-colors">Contact</a>
           </nav>
         </div>
       </header>
 
-      {/* Hero */}
-      <section className="pt-16 min-h-screen flex flex-col justify-center px-8">
-        <div className="max-w-5xl mx-auto w-full">
-          <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-8">合同会社AMAYOTA</p>
-          <h1 className="text-6xl sm:text-8xl font-thin leading-none tracking-tight mb-12 text-gray-900">
-            Connect<br />
-            <span className="font-semibold">Students.</span>
-          </h1>
-          <p className="text-base text-gray-500 max-w-md leading-loose">
-            大学生の可能性を最大化する<br />
-            スキルシェア・マッチングプラットフォーム
-          </p>
-          <div className="mt-16 h-px bg-gray-200 w-full" />
-          <div className="mt-8 flex gap-16 text-center sm:text-left">
-            <div>
-              <div className="text-4xl font-semibold">70<span className="text-lg text-gray-400">+</span></div>
-              <div className="text-xs text-gray-400 tracking-widest uppercase mt-1">Users</div>
+      {/* Hero — full viewport */}
+      <section className="min-h-screen flex flex-col items-center justify-center text-center px-6 relative">
+        {/* Glow */}
+        <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
+          <div className="w-[600px] h-[600px] rounded-full bg-white/5 blur-3xl" />
+        </div>
+
+        {/* App icon */}
+        <div className="w-24 h-24 rounded-[26px] bg-white flex items-center justify-center mb-10 shadow-2xl relative z-10">
+          <span className="text-black text-5xl font-black">S</span>
+        </div>
+
+        <p className="text-white/40 text-xs tracking-[0.4em] uppercase mb-5 relative z-10">合同会社AMAYOTA</p>
+
+        <h1 className="text-6xl sm:text-8xl font-bold leading-tight tracking-tight mb-6 relative z-10">
+          Three Good
+        </h1>
+
+        <p className="text-white/60 text-lg sm:text-xl max-w-lg leading-relaxed relative z-10">
+          大学生のスキルをつなぐ、<br className="hidden sm:block" />
+          新しいマッチングプラットフォーム。
+        </p>
+
+        <div className="mt-16 flex gap-12 relative z-10">
+          {[
+            { num: "70+", label: "登録ユーザー" },
+            { num: "2026", label: "サービス開始" },
+            { num: "学生限定", label: "本人確認済み" },
+          ].map(({ num, label }) => (
+            <div key={label} className="text-center">
+              <div className="text-3xl sm:text-4xl font-semibold">{num}</div>
+              <div className="text-white/40 text-xs mt-1 tracking-wider">{label}</div>
             </div>
-            <div>
-              <div className="text-4xl font-semibold">2026</div>
-              <div className="text-xs text-gray-400 tracking-widest uppercase mt-1">Founded</div>
+          ))}
+        </div>
+
+        {/* Scroll hint */}
+        <div className="absolute bottom-10 left-0 right-0 flex justify-center">
+          <div className="w-px h-16 bg-gradient-to-b from-white/30 to-transparent" />
+        </div>
+      </section>
+
+      {/* Service — white section */}
+      <section id="service" className="bg-white text-gray-900 py-32 px-6">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-xs tracking-[0.4em] uppercase text-gray-400 mb-3 text-center">Service</p>
+          <h2 className="text-5xl sm:text-6xl font-bold text-center mb-4 tracking-tight">2つの機能。</h2>
+          <p className="text-center text-gray-500 mb-20">学生生活をもっとリッチにする体験を提供します。</p>
+
+          <div className="grid sm:grid-cols-2 gap-6">
+            {/* Card 1 */}
+            <div className="bg-gray-950 text-white rounded-3xl p-10 flex flex-col justify-between min-h-[360px]">
+              <div>
+                <div className="text-5xl mb-8">💼</div>
+                <h3 className="text-2xl font-bold mb-3">スキルシェア</h3>
+                <p className="text-white/50 text-sm leading-loose">
+                  写真撮影・勉強サポート・就活相談など、大学生のスキルで互いに助け合えるプラットフォーム。依頼者と受注者が合意した金額のみで取引が成立します。
+                </p>
+              </div>
+              <div className="mt-8 text-xs text-white/30 tracking-widest uppercase">Skill Sharing</div>
             </div>
+
+            {/* Card 2 */}
+            <div className="bg-gray-100 rounded-3xl p-10 flex flex-col justify-between min-h-[360px]">
+              <div>
+                <div className="text-5xl mb-8">👥</div>
+                <h3 className="text-2xl font-bold mb-3">友達マッチング</h3>
+                <p className="text-gray-500 text-sm leading-loose">
+                  共通の趣味・授業・エリアを持つ学生同士が出会えるマッチング機能。新しい環境でも自然に友達ができる仕組みを提供します。
+                </p>
+              </div>
+              <div className="mt-8 text-xs text-gray-400 tracking-widest uppercase">Friend Matching</div>
+            </div>
+          </div>
+
+          {/* Safety banner */}
+          <div className="mt-6 bg-gray-950 text-white rounded-3xl p-10 flex flex-col sm:flex-row items-center gap-8">
+            <div className="text-5xl">🎓</div>
             <div>
-              <div className="text-4xl font-semibold">京都</div>
-              <div className="text-xs text-gray-400 tracking-widest uppercase mt-1">Based in</div>
+              <h3 className="text-xl font-bold mb-2">学生証確認による安心設計</h3>
+              <p className="text-white/50 text-sm leading-loose max-w-xl">
+                Three Goodは学生証確認を導入し、本物の大学生だけが利用できるクローズドコミュニティを実現。安全で信頼性の高いマッチング環境を提供しています。
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Service */}
-      <section id="service" className="py-32 px-8 bg-gray-950 text-white">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-xs tracking-[0.3em] uppercase text-gray-500 mb-4">Service</p>
-          <h2 className="text-4xl font-thin mb-20">事業内容</h2>
-          <div className="grid sm:grid-cols-2 gap-px bg-gray-800">
-            <div className="bg-gray-950 p-12">
-              <div className="text-xs tracking-widest uppercase text-gray-500 mb-6">01</div>
-              <h3 className="text-xl font-medium mb-4">スキルシェア・依頼マッチング</h3>
-              <p className="text-gray-400 text-sm leading-loose">
-                大学生が持つスキルを活かして、学生同士でお手伝いを依頼・受注できるプラットフォーム。写真撮影・勉強サポート・就活相談など多様な依頼に対応。
-              </p>
-            </div>
-            <div className="bg-gray-950 p-12">
-              <div className="text-xs tracking-widest uppercase text-gray-500 mb-6">02</div>
-              <h3 className="text-xl font-medium mb-4">友達マッチング</h3>
-              <p className="text-gray-400 text-sm leading-loose">
-                共通の趣味・授業・エリアを持つ学生同士が出会えるマッチング機能。学生証確認済みユーザーのみが利用できる安全な環境を提供。
-              </p>
-            </div>
-          </div>
-          <div className="mt-px bg-gray-800">
-            <div className="bg-gray-950 p-12">
-              <div className="text-xs tracking-widest uppercase text-gray-500 mb-6">Platform</div>
-              <h3 className="text-xl font-medium mb-4">Three Good</h3>
-              <p className="text-gray-400 text-sm leading-loose max-w-xl">
-                学生証確認による本人認証を導入し、安心・安全な学生コミュニティを実現。大学生限定のクローズドプラットフォームとして信頼性の高い環境を提供しています。
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
+      {/* Company — dark section */}
+      <section id="company" className="bg-black py-32 px-6">
+        <div className="max-w-6xl mx-auto">
+          <p className="text-xs tracking-[0.4em] uppercase text-white/30 mb-3">Company</p>
+          <h2 className="text-5xl sm:text-6xl font-bold mb-20 tracking-tight">会社情報</h2>
 
-      {/* Company */}
-      <section id="company" className="py-32 px-8">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-xs tracking-[0.3em] uppercase text-gray-400 mb-4">Company</p>
-          <h2 className="text-4xl font-thin mb-20">会社情報</h2>
-          <div className="space-y-0">
+          <div className="divide-y divide-white/10">
             {[
               { label: "会社名", value: "合同会社AMAYOTA" },
               { label: "英文名", value: "AMAYOTA LLC" },
@@ -92,37 +118,37 @@ export default function Home() {
               { label: "電話番号", value: "080-6572-8572" },
               { label: "メール", value: "musubi.match@gmail.com" },
               { label: "事業内容", value: "インターネットを利用した各種情報提供サービス" },
-            ].map(({ label, value }, i) => (
-              <div key={i} className="grid grid-cols-3 border-t border-gray-100 py-6 last:border-b">
-                <div className="text-xs tracking-widest uppercase text-gray-400 pt-1">{label}</div>
-                <div className="col-span-2 text-sm leading-relaxed">{value}</div>
+            ].map(({ label, value }) => (
+              <div key={label} className="py-6 sm:grid sm:grid-cols-4 gap-8">
+                <div className="text-white/30 text-sm mb-1 sm:mb-0">{label}</div>
+                <div className="sm:col-span-3 text-white/80 text-sm">{value}</div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Contact */}
-      <section id="contact" className="py-32 px-8 bg-gray-950 text-white">
-        <div className="max-w-5xl mx-auto">
-          <p className="text-xs tracking-[0.3em] uppercase text-gray-500 mb-4">Contact</p>
-          <h2 className="text-4xl font-thin mb-8">お問い合わせ</h2>
-          <p className="text-gray-400 text-sm mb-12 leading-loose">
-            ご質問・取材・協業のご相談はメールにてお気軽にご連絡ください。
+      {/* Contact — white section */}
+      <section id="contact" className="bg-white text-gray-900 py-32 px-6">
+        <div className="max-w-6xl mx-auto text-center">
+          <p className="text-xs tracking-[0.4em] uppercase text-gray-400 mb-3">Contact</p>
+          <h2 className="text-5xl sm:text-6xl font-bold mb-6 tracking-tight">お問い合わせ</h2>
+          <p className="text-gray-500 mb-12 text-lg">
+            ご質問・取材・協業のご相談はお気軽にどうぞ。
           </p>
           <a
             href="mailto:musubi.match@gmail.com"
-            className="inline-flex items-center gap-4 border border-gray-700 px-8 py-4 text-sm tracking-widest hover:bg-white hover:text-gray-900 transition-colors"
+            className="inline-flex items-center gap-3 bg-black text-white px-10 py-5 rounded-full text-sm font-medium hover:bg-gray-800 transition-colors"
           >
-            musubi.match@gmail.com
-            <span className="text-gray-500">→</span>
+            メールで問い合わせる
+            <span>→</span>
           </a>
         </div>
       </section>
 
       {/* Footer */}
-      <footer className="bg-gray-950 border-t border-gray-800 py-8 px-8">
-        <div className="max-w-5xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-gray-600 tracking-widest">
+      <footer className="bg-black border-t border-white/10 py-10 px-6">
+        <div className="max-w-6xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-white/20 tracking-widest">
           <span>AMAYOTA LLC</span>
           <span>© 2026 合同会社AMAYOTA. All rights reserved.</span>
         </div>
