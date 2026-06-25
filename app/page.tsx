@@ -19,7 +19,7 @@ export default function Home() {
         <p className="text-[13px] font-bold text-black mb-5 tracking-wide">Mission</p>
 
         <h1 className="text-[32px] sm:text-[58px] font-bold leading-[1.25] tracking-tight mb-10 max-w-2xl">
-          テクノロジーで、<br />
+          テクノロジーで、<br className="hidden sm:block" />
           すべての人に笑顔を。
         </h1>
 
