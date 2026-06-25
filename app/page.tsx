@@ -28,52 +28,88 @@ export default function Home() {
         </p>
 
         {/* ── ILLUSTRATION ── */}
-        <div className="relative h-80 sm:h-96 w-full overflow-hidden rounded-3xl bg-gray-50">
-          {/* ドットグリッド背景 */}
-          <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(#d1d5db 1.5px, transparent 1.5px)', backgroundSize: '28px 28px'}} />
+        <div className="relative h-[440px] sm:h-[500px] w-full overflow-hidden rounded-3xl border border-gray-100 bg-[#f9fafb]">
+          {/* ラインGrid背景 */}
+          <div className="absolute inset-0 opacity-60" style={{backgroundImage: 'linear-gradient(#e5e7eb 1px, transparent 1px), linear-gradient(90deg, #e5e7eb 1px, transparent 1px)', backgroundSize: '44px 44px'}} />
+          {/* 中央グロー */}
+          <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-white opacity-70 blur-3xl" />
 
-          {/* 背景の丸 */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[560px] h-[560px] rounded-full bg-gradient-to-t from-white via-gray-100 to-transparent" />
-
-          {/* 中央人物 */}
-          <div className="float3 absolute bottom-0 left-1/2 -translate-x-1/2 z-10 text-center">
-            <div className="text-[100px] sm:text-[120px] leading-none select-none drop-shadow-2xl">🧑‍💻</div>
-          </div>
-
-          {/* 周りのアイテム */}
-          <div className="float1 absolute bottom-28 left-[10%] sm:left-[18%]">
-            <div className="bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.10)] border border-gray-100 px-4 py-3 flex items-center gap-2 text-[13px] font-semibold whitespace-nowrap">
-              <span className="text-lg">📸</span> 写真撮影
+          {/* ── 中央カード（プロフィール） ── */}
+          <div className="float3 absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-10 w-52">
+            <div className="bg-white rounded-2xl shadow-[0_8px_40px_rgba(0,0,0,0.10)] border border-gray-100/80 p-5">
+              <div className="flex items-center gap-3 mb-4">
+                <div className="w-10 h-10 rounded-full bg-gradient-to-br from-violet-400 to-indigo-500 flex items-center justify-center text-white text-[14px] font-bold shrink-0">田</div>
+                <div className="min-w-0">
+                  <p className="text-[13px] font-semibold text-gray-900 truncate">田中 けんじ</p>
+                  <p className="text-[11px] text-gray-400">京都大学 2年</p>
+                </div>
+              </div>
+              <div className="bg-gray-50 rounded-xl px-3 py-2.5 mb-4">
+                <p className="text-[10px] text-gray-400 mb-0.5 uppercase tracking-wide">スキル</p>
+                <p className="text-[13px] font-semibold text-gray-800">勉強サポート</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <div className="flex gap-px">
+                  {[0,1,2,3,4].map(i => <span key={i} className="text-amber-400 text-[11px]">★</span>)}
+                </div>
+                <span className="text-[14px] font-bold text-gray-900">¥1,500/h</span>
+              </div>
             </div>
           </div>
 
-          <div className="float2 absolute bottom-44 left-[2%] sm:left-[10%]">
-            <div className="bg-gray-900 text-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.18)] px-5 py-3 text-[13px] font-semibold whitespace-nowrap tracking-tight">
-              ¥ 1,500
+          {/* ── マッチング通知（上） ── */}
+          <div className="float1 absolute top-8 left-1/2 -translate-x-1/2 whitespace-nowrap">
+            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3 flex items-center gap-3">
+              <div className="w-7 h-7 rounded-full bg-emerald-50 flex items-center justify-center shrink-0">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M2 7l3 3 6-6" stroke="#10b981" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round"/></svg>
+              </div>
+              <div>
+                <p className="text-[12px] font-semibold text-gray-900">マッチング完了</p>
+                <p className="text-[10px] text-gray-400">依頼が確定しました</p>
+              </div>
             </div>
           </div>
 
-          <div className="float4 absolute bottom-28 right-[10%] sm:right-[18%]">
-            <div className="bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.10)] border border-gray-100 px-4 py-3 flex items-center gap-2 text-[13px] font-semibold whitespace-nowrap">
-              <span className="text-lg">📝</span> 就活相談
+          {/* ── 支払いカード（左上） ── */}
+          <div className="float2 absolute top-14 left-[6%] sm:left-[12%]">
+            <div className="bg-gray-900 text-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.14)] px-4 py-3.5">
+              <p className="text-[10px] text-white/40 mb-1 tracking-widest uppercase">Payment</p>
+              <p className="text-[18px] font-bold tracking-tight">¥ 1,500</p>
             </div>
           </div>
 
-          <div className="float5 absolute bottom-48 right-[4%] sm:right-[12%]">
-            <div className="bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.10)] border border-gray-100 px-4 py-3 flex items-center gap-2 text-[13px] font-semibold whitespace-nowrap">
-              <span className="text-lg">🎓</span> 学生証確認済み
+          {/* ── スキルタグ（左下） ── */}
+          <div className="float4 absolute bottom-14 left-[6%] sm:left-[12%]">
+            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3">
+              <p className="text-[10px] text-gray-400 mb-2 tracking-wide uppercase">Skills</p>
+              <div className="flex gap-1.5">
+                <span className="bg-gray-100 text-gray-700 text-[11px] font-medium px-2.5 py-1 rounded-full">写真撮影</span>
+                <span className="bg-gray-100 text-gray-700 text-[11px] font-medium px-2.5 py-1 rounded-full">就活相談</span>
+              </div>
             </div>
           </div>
 
-          <div className="float2 absolute bottom-10 left-[22%]">
-            <div className="bg-white rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-2 text-[12px] text-gray-700 font-semibold whitespace-nowrap flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" /> マッチング完了
+          {/* ── 学生証確認（右上） ── */}
+          <div className="float5 absolute top-14 right-[6%] sm:right-[12%]">
+            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3 flex items-center gap-2.5">
+              <div className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+                <svg width="13" height="13" viewBox="0 0 13 13" fill="none"><path d="M6.5 1a3 3 0 100 6 3 3 0 000-6zM2 12a5 5 0 0110-1" stroke="#3b82f6" strokeWidth="1.5" strokeLinecap="round"/></svg>
+              </div>
+              <div>
+                <p className="text-[12px] font-semibold text-gray-900">学生証確認済み</p>
+                <p className="text-[10px] text-gray-400">本人確認完了</p>
+              </div>
             </div>
           </div>
 
-          <div className="float1 absolute bottom-10 right-[22%]">
-            <div className="bg-white rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-2 text-[12px] text-gray-700 font-semibold whitespace-nowrap flex items-center gap-1.5">
-              <span className="text-amber-400">★</span> 評価 4.9
+          {/* ── 評価（右下） ── */}
+          <div className="float2 absolute bottom-14 right-[6%] sm:right-[12%]">
+            <div className="bg-white rounded-2xl shadow-[0_4px_20px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-3">
+              <p className="text-[10px] text-gray-400 mb-1.5 tracking-wide uppercase">Rating</p>
+              <div className="flex items-center gap-2">
+                <span className="text-[20px] font-bold text-gray-900 leading-none">4.9</span>
+                <div className="flex gap-px">{[0,1,2,3,4].map(i => <span key={i} className="text-amber-400 text-[11px]">★</span>)}</div>
+              </div>
             </div>
           </div>
         </div>
