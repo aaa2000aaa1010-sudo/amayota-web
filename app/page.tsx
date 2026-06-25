@@ -124,27 +124,25 @@ export default function Home() {
           </div>
 
           {/* Feature row 2 — wide */}
-          <div className="bg-gray-950 text-white rounded-2xl p-10 sm:p-14">
-            <p className="text-[11px] tracking-[0.3em] uppercase text-white/30 mb-5">Security</p>
-            <h3 className="text-[28px] sm:text-[36px] font-bold leading-tight mb-12 max-w-xl">
-              大学生だけの、<br />信頼できる場所。
-            </h3>
-            <div className="grid sm:grid-cols-3 gap-8 pt-10 border-t border-white/10">
-              <div>
-                <p className="text-[10px] tracking-[0.25em] uppercase text-white/25 mb-3">Identity</p>
-                <p className="text-[15px] font-semibold mb-2">学生証確認</p>
-                <p className="text-[13px] text-white/50 leading-relaxed">本物の大学生だけが登録できる。なりすましを防ぐ本人確認フロー。</p>
-              </div>
-              <div>
-                <p className="text-[10px] tracking-[0.25em] uppercase text-white/25 mb-3">Safety</p>
-                <p className="text-[15px] font-semibold mb-2">通報・モニタリング</p>
-                <p className="text-[13px] text-white/50 leading-relaxed">問題ある行動は通報システムと運営監視で速やかに対処。</p>
-              </div>
-              <div>
-                <p className="text-[10px] tracking-[0.25em] uppercase text-white/25 mb-3">Community</p>
-                <p className="text-[15px] font-semibold mb-2">クローズドな環境</p>
-                <p className="text-[13px] text-white/50 leading-relaxed">学生同士だからこそ生まれる、安心感と信頼のコミュニティ。</p>
-              </div>
+          <div className="bg-gray-50 border border-gray-200 rounded-2xl p-10 sm:p-14">
+            <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
+              <h3 className="text-[26px] sm:text-[32px] font-bold leading-tight tracking-tight text-gray-900">
+                大学生だけの、<br />信頼できる場所。
+              </h3>
+              <p className="text-[13px] text-gray-400 sm:text-right">Three Good のセキュリティ</p>
+            </div>
+            <div className="grid sm:grid-cols-3 gap-6">
+              {[
+                { num: "01", title: "学生証確認", body: "本物の大学生だけが登録できる。なりすましを防ぐ本人確認フロー。" },
+                { num: "02", title: "通報・モニタリング", body: "問題ある行動は通報システムと運営監視で速やかに対処。" },
+                { num: "03", title: "クローズドな環境", body: "学生同士だからこそ生まれる、安心感と信頼のコミュニティ。" },
+              ].map(({ num, title, body }) => (
+                <div key={num} className="bg-white border border-gray-100 rounded-xl p-6">
+                  <p className="text-[11px] font-bold text-gray-300 mb-4 tracking-widest">{num}</p>
+                  <p className="text-[15px] font-bold text-gray-900 mb-2">{title}</p>
+                  <p className="text-[13px] text-gray-500 leading-relaxed">{body}</p>
+                </div>
+              ))}
             </div>
           </div>
         </div>
