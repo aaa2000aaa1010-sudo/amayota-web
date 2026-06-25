@@ -28,49 +28,52 @@ export default function Home() {
         </p>
 
         {/* ── ILLUSTRATION ── */}
-        <div className="relative h-80 sm:h-96 w-full overflow-hidden">
+        <div className="relative h-80 sm:h-96 w-full overflow-hidden rounded-3xl bg-gray-50">
+          {/* ドットグリッド背景 */}
+          <div className="absolute inset-0" style={{backgroundImage: 'radial-gradient(#d1d5db 1.5px, transparent 1.5px)', backgroundSize: '28px 28px'}} />
+
           {/* 背景の丸 */}
-          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[600px] h-[600px] rounded-full bg-gray-50 -z-0" />
+          <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[560px] h-[560px] rounded-full bg-gradient-to-t from-white via-gray-100 to-transparent" />
 
           {/* 中央人物 */}
           <div className="float3 absolute bottom-0 left-1/2 -translate-x-1/2 z-10 text-center">
-            <div className="text-[100px] sm:text-[120px] leading-none select-none">🧑‍💻</div>
+            <div className="text-[100px] sm:text-[120px] leading-none select-none drop-shadow-2xl">🧑‍💻</div>
           </div>
 
           {/* 周りのアイテム */}
           <div className="float1 absolute bottom-28 left-[10%] sm:left-[18%]">
-            <div className="bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 text-[13px] font-medium whitespace-nowrap">
-              <span className="text-xl">📸</span> 写真撮影
+            <div className="bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.10)] border border-gray-100 px-4 py-3 flex items-center gap-2 text-[13px] font-semibold whitespace-nowrap">
+              <span className="text-lg">📸</span> 写真撮影
             </div>
           </div>
 
           <div className="float2 absolute bottom-44 left-[2%] sm:left-[10%]">
-            <div className="bg-black text-white rounded-2xl shadow-lg px-4 py-3 text-[13px] font-medium whitespace-nowrap">
-              ¥ 1,500円
+            <div className="bg-gray-900 text-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.18)] px-5 py-3 text-[13px] font-semibold whitespace-nowrap tracking-tight">
+              ¥ 1,500
             </div>
           </div>
 
           <div className="float4 absolute bottom-28 right-[10%] sm:right-[18%]">
-            <div className="bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 text-[13px] font-medium whitespace-nowrap">
-              <span className="text-xl">📝</span> 就活相談
+            <div className="bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.10)] border border-gray-100 px-4 py-3 flex items-center gap-2 text-[13px] font-semibold whitespace-nowrap">
+              <span className="text-lg">📝</span> 就活相談
             </div>
           </div>
 
           <div className="float5 absolute bottom-48 right-[4%] sm:right-[12%]">
-            <div className="bg-white rounded-2xl shadow-lg px-4 py-3 flex items-center gap-2 text-[13px] font-medium whitespace-nowrap">
-              <span className="text-xl">🎓</span> 学生証確認済み
+            <div className="bg-white rounded-2xl shadow-[0_4px_24px_rgba(0,0,0,0.10)] border border-gray-100 px-4 py-3 flex items-center gap-2 text-[13px] font-semibold whitespace-nowrap">
+              <span className="text-lg">🎓</span> 学生証確認済み
             </div>
           </div>
 
-          <div className="float2 absolute bottom-12 left-[25%]">
-            <div className="bg-gray-100 rounded-full px-4 py-2 text-[12px] text-gray-600 font-medium whitespace-nowrap">
-              ✅ マッチング完了
+          <div className="float2 absolute bottom-10 left-[22%]">
+            <div className="bg-white rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-2 text-[12px] text-gray-700 font-semibold whitespace-nowrap flex items-center gap-1.5">
+              <span className="w-2 h-2 rounded-full bg-emerald-400 inline-block" /> マッチング完了
             </div>
           </div>
 
-          <div className="float1 absolute bottom-12 right-[25%]">
-            <div className="bg-gray-100 rounded-full px-4 py-2 text-[12px] text-gray-600 font-medium whitespace-nowrap">
-              ⭐ 評価 4.9
+          <div className="float1 absolute bottom-10 right-[22%]">
+            <div className="bg-white rounded-full shadow-[0_2px_12px_rgba(0,0,0,0.08)] border border-gray-100 px-4 py-2 text-[12px] text-gray-700 font-semibold whitespace-nowrap flex items-center gap-1.5">
+              <span className="text-amber-400">★</span> 評価 4.9
             </div>
           </div>
         </div>
@@ -121,19 +124,27 @@ export default function Home() {
           </div>
 
           {/* Feature row 2 — wide */}
-          <div className="bg-gray-950 text-white rounded-2xl p-10 sm:p-14 flex flex-col sm:flex-row gap-10 items-start">
-            <div className="shrink-0">
-              <div className="w-10 h-10 rounded-xl bg-white/10 flex items-center justify-center">
-                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                  <path d="M10 2a6 6 0 100 12A6 6 0 0010 2zM4 20a8 8 0 1112-6.928" stroke="white" strokeWidth="1.5" strokeLinecap="round"/>
-                </svg>
+          <div className="bg-gray-950 text-white rounded-2xl p-10 sm:p-14">
+            <p className="text-[11px] tracking-[0.3em] uppercase text-white/30 mb-5">Security</p>
+            <h3 className="text-[28px] sm:text-[36px] font-bold leading-tight mb-12 max-w-xl">
+              大学生だけの、<br />信頼できる場所。
+            </h3>
+            <div className="grid sm:grid-cols-3 gap-8 pt-10 border-t border-white/10">
+              <div>
+                <p className="text-[10px] tracking-[0.25em] uppercase text-white/25 mb-3">Identity</p>
+                <p className="text-[15px] font-semibold mb-2">学生証確認</p>
+                <p className="text-[13px] text-white/50 leading-relaxed">本物の大学生だけが登録できる。なりすましを防ぐ本人確認フロー。</p>
               </div>
-            </div>
-            <div>
-              <h3 className="text-[20px] font-bold mb-3">大学生限定プラットフォーム</h3>
-              <p className="text-white/50 text-[14px] leading-[1.9] max-w-2xl">
-                Three Goodは大学生のみが利用できるクローズドな環境です。なりすまし防止のための学生証確認・通報システム・運営によるモニタリングにより、安心して利用できるコミュニティを維持しています。
-              </p>
+              <div>
+                <p className="text-[10px] tracking-[0.25em] uppercase text-white/25 mb-3">Safety</p>
+                <p className="text-[15px] font-semibold mb-2">通報・モニタリング</p>
+                <p className="text-[13px] text-white/50 leading-relaxed">問題ある行動は通報システムと運営監視で速やかに対処。</p>
+              </div>
+              <div>
+                <p className="text-[10px] tracking-[0.25em] uppercase text-white/25 mb-3">Community</p>
+                <p className="text-[15px] font-semibold mb-2">クローズドな環境</p>
+                <p className="text-[13px] text-white/50 leading-relaxed">学生同士だからこそ生まれる、安心感と信頼のコミュニティ。</p>
+              </div>
             </div>
           </div>
         </div>
